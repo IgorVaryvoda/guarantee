@@ -1,0 +1,21 @@
+{
+  "name": "guarantee",
+  "version": "1.0.0",
+  "description": "ether.cards guarantee contract and tests",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ethercards/guarantee.git"
+  },
+  "author": "Nick Johnson <nick@arachnidlabs.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ethercards/guarantee/issues"
+  },
+  "homepage": "https://github.com/ethercards/guarantee#readme",
+  "dependencies": {
+    "ethereumjs-testrpc": "^2.2.4"
+  }
+}
