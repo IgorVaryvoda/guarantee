@@ -34,6 +34,14 @@ contract DepositHolder {
         if(msg.sender != auditor) throw;
         _
     }
+    
+    function setOwner(address newOwner) owner_only {
+        owner = newOwner;
+    }
+    
+    function setAuditor(address newAuditor) auditor_only {
+        auditor = newAuditor;
+    }
 
     /**
      * @dev Lodge deposits for a set of address hashes. Automatically uses
@@ -163,5 +171,14 @@ contract DepositHolder {
         Claim(addr, amount);
         if(!addr.send(amount))
             throw;
+    }
+    
+    /**
+     * @dev Deletes the contract, if no deposits are held.
+     */
+    function destroy() owner_only {
+        if(depositCount > 0)
+            throw;
+        selfdestruct(msg.sender);
     }
 }
